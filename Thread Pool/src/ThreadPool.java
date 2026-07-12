@@ -28,4 +28,10 @@ public class ThreadPool {
             e.printStackTrace();
         }
     }
+
+    public void shutdown(){
+        for(Worker worker : workers){
+            worker.interrupt();
+        }
+    }
 }

@@ -96,5 +96,9 @@ public class App {
             Task task = new Task(i);
             pool.submit(task);
         }
+
+        Thread.sleep(2000);
+
+        pool.shutdown();
     }
 }

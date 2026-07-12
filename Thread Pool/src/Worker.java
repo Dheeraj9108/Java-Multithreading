@@ -15,8 +15,10 @@ public class Worker extends Thread{
             try {
                 Task task = queue.take();
                 task.run();
-            } catch (Exception e) {
-                // TODO: handle exception
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted");
+                Thread.currentThread().interrupt();
+                break;
             }
         }
     }
